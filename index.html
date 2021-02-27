@@ -30,7 +30,7 @@
                 <div class="avaliacoes">
                     <h2 class="avaliacoesSubtitulo">Avaliações</h2>
                     <ul>
-                        <li v-for="avaliacao in produto.reviews">
+                        <li v-for="avaliacao in produto.reviews" class="avaliacao">
                             <p class="avaliacaoDescricao">{{avaliacao.descricao}}</p>
                             <p class="avaliacaoUsuario">{{avaliacao.nome}} | {{avaliacao.estrelas}}</p>
                         </li>
