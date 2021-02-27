@@ -8,12 +8,24 @@
     initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
     <title>Techshop</title>
 </head>
 
 <body>
     <div id="app">
-        {{produtos}}
+        <section class="produtos">
+            <div v-for="produto in produtos" :key="produto.id" class="produto">
+                <img :src="produto.img" :alt="produto.nome" class="produtoImg">
+                <div class="produtoInfo">
+                    <span class="produtoPreco">{{produto.preco}}</span>
+                    <h2 class="produtoTitulo">{{produto.nome}}</h2>
+                </div>
+            </div>
+
+        </section>
+
     </div>
     <script src="./app.js"></script>
 </body>
