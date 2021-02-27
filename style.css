@@ -38,6 +38,7 @@ body {
     margin-bottom: 40px;
     background: #fff;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .produtoImg {
@@ -52,4 +53,11 @@ body {
 
 .produtoPreco {
     color: rgba(0, 0, 0, 0.5)
+}
+
+
+/* Modal */
+
+.modal {
+    background-color: #FFF;
 }
