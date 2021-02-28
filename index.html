@@ -44,7 +44,7 @@
                 </div>
                 <button @click="produto = false" class="modalFechar">X</button>
                 <div class="modalDados">
-                    <span class="modalPreco">{{produto.preco}}</span>
+                    <span class="modalPreco">{{produto.preco | numeroPreco}}</span>
                     <h2 class="modalTitulo">{{produto.nome}}</h2>
                     <p>{{produto.descricao}}</p>
                     <button v-if="produto.estoque > 0" class="modalBtn" @click="adicionarItem">Adicionar Item</button>
@@ -61,6 +61,10 @@
                 </div>
             </div>
         </section>
+
+        <div class="alerta" :class="{ativo: alertaAtivo}">
+            <p class="alertaMessagem">{{messagemAlerta}}</p>
+        </div>
 
     </div>
     <script src="./app.js"></script>
