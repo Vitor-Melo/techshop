@@ -68,14 +68,24 @@ const vm = new Vue({
         this.alertaAtivo = false;
       }, 1500);
     },
+    router() {
+      const hash = document.location.hash;
+      if (hash) this.getProduto(hash.replace('#', ''));
+    },
   },
   watch: {
+    produto() {
+      document.title = this.produto.nome || 'Techshop';
+      const hash = this.produto.id || '';
+      history.pushState(null, null, `#${hash}`);
+    },
     carrinho() {
       window.localStorage.carrinho = JSON.stringify(this.carrinho);
     },
   },
   created() {
     this.getProdutos();
+    this.router();
     this.checarLocalStorage();
   },
 });
